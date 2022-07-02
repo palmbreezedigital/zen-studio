@@ -6,21 +6,7 @@
 
 img { max-width: 100%; }
 
-/*   Temporary Styles   */
-*{
-    padding: 0.5rem;
-    border: 2px solid rgb(200,200,200);
-}
 
-
-
-html, body {
-    border: none;
-}
-
-h1,h2,h3,h4,h5,h6,p, a {
-    border: 2px solid rgb(179,84,84);
-}
 
 /* Re-usable Utiity Classes  */
 .tall-50 { min-height: 50vh; }
@@ -52,11 +38,139 @@ h1,h2,h3,h4,h5,h6,p, a {
 
 /*  General typography & universal styles */
 
+body {
+    font-family: 'Baskervville', serif;
+    color: rgb (60, 60, 60);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Didot', serif;
+    line-height: 1;
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+
+p {
+    line-height: 1.4;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+ul { margin-left: 1rem; }
+li { padding-left: 0.5rem; }
+
+h1:last-child, 
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child {
+    margin-bottom: 0;
+}
+
+.text-lg { font-size: 3.5rem; }
+.text-xl { font-size: 4.5rem; }
+.text-xxl { font-size: 8.5rem; }
+.text-bold { font-weight: bold; }
+
+.text-lato { 
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; 
+    color: #e37165;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.button { 
+    color: inherit;
+    border: 1px solid #f59186;
+    border-radius: 2rem;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    display: inline-block;
+
+}
+
 /*  Header & Footer */
+
+footer {
+    padding-bottom: 0.5rem;
+    color: rgb (140,1400,140);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
 
 /*  Images & Background Images */
 .bg-image {
     background-size: cover;
     background-position: center;
     background-image: url('/images/leaves-light.png')
+}
+
+.bg-stone { background-image: url('/images/stone.png'); }
+.bg-leaves { 
+    background-image: url('/images/zen-studio-1.jpg');
+    background-position: 50%, 31%;
+ }
+.bg-venue { background-image: url('/images/zen-studio-3.jpg'); }
+.bg-map { background-image: url('/images/light-colored-map.png'); }
+
+.shape-teardrop { 
+    border-radius: 20rem;
+    border-bottom-right-radius: 0;
+}
+
+.shape-window {
+    border-top-right-radius: 15rem; 
+    border-top-left-radius: 15rem;
+}
+
+/*  Gridlex Media Queries
+
+@media (max-width: 36em)  Max 576px  _xs-*
+@media (max-width: 48em)  Max 768px  _sm-*
+@media (max-width: 64em)  Max 1024px  _md-*
+@media (max-width: 80em)  Max 1280px  _lg-*
+
+*/
+
+@media (max-width: 64em) {
+    .text-xl { font-size: 3.5rem; }
+}
+
+
+/* Gridlex small Media query Max 768px - _sm-* */
+@media (max-width: 48em) {
+    .text-xxl { font-size: 6.5rem; }
+    .text-xl { font-size: 2.5rem; }
+    .text-lg { font-size: 3.5rem; }
+    .sm-block { display: block; }
+
+    .bg-leaves { 
+        background-image: url('/images/leaves-light.png');
+    }
+    
+    .text-center-sm { text-align: center; }
+} 
+
+/* Gridlex small Media query Max 576px - _xs-* */
+@media (max-width: 36em) {
+    .text-xxl { font-size: 4.5rem; }
+    .sm-block { display: block; }
+}
+
+/* Gridlex small Media query Max 350px - _xxs-* */
+@media (max-width: 22em) {
+    .text-xxl { font-size: 2.5rem; }
 }
